@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace EjercicioClaseLista
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Variables Locales a utilizar 
+            char JLSeguir = 'S';
+            string JLnombrealumno = "";
+            int JLnumerocuenta = 0, JLOpcion = 0;
+            double JLIndiceAlumno = 0, JLnota1 = 0, JLnota2 = 0, JLnota3 = 0, JLSumanotafinal = 0, JLPromedioClase = 0;
+
+            //Definimos la lista con el objeto del JLAlumno
+            List<JLAlumno> JLListaAlumno = new List<JLAlumno>();
+
+            //Estructura de iteración para asiganar los valores como el nombre del alumno, cuenta y nota.
+            while (JLSeguir.Equals('S') || JLSeguir.Equals('s'))
+            {
+                Console.WriteLine("Bienvenido, este un programa de registro de alumnos");
+                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine();
+                Console.Write("Ingrese el nombre del Alumno: ");
+                JLnombrealumno = Console.ReadLine();
+                Console.Write("Ingrese el numero de cuenta del alumno: ");
+                JLnumerocuenta = int.Parse(Console.ReadLine());
+                Console.Write("Ingrese la Nota del I Parcial: ");
+                JLnota1 = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese la Nota del II Parcial: ");
+                JLnota2 = double.Parse(Console.ReadLine());
+                Console.Write("Ingrese la Nota del III Parcial: ");
+                JLnota3 = double.Parse(Console.ReadLine());
+
+                //Se Intancia un nuevo objeto de la clase JLAlumno. Se toma tambien el indice con el objeto perse. 
+                JLAlumno JLObjAlumno = new JLAlumno(JLnombrealumno, JLnumerocuenta, JLnota1, JLnota2, JLnota3);
+                JLIndiceAlumno = JLObjAlumno.JLCalculoIndiceAlumno();
+                JLListaAlumno.Add(JLObjAlumno);
+                Console.Write("Desea Agregar mas Alumno S/N: ");
+                JLSeguir = char.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+
+            Console.WriteLine("Opciones de Resultado");
+            Console.WriteLine("1. Ver Resultados Detallado");
+            Console.WriteLine("2. Ver Resultados en Resumen");
+            Console.WriteLine("3. Ver Detallado y Resumen");
+            Console.Write("Ingrese el Numero de Opcion: ");
+            JLOpcion = int.Parse(Console.ReadLine());
+
+            //Estructura de Decisión para mostrar el Detalle o el Resumen.
+            if (JLOpcion == 1)
+            {
+                foreach (JLAlumno JLDatosAlumno in JLListaAlumno)
+                {
+                    Console.WriteLine("El Alumno es " + JLDatosAlumno.JLNombreAlumno + " Con Cuenta " + JLDatosAlumno.JLNumeroCuentaAlumno + " con Indice " + JLIndiceAlumno);
+                }
+            }
+            else if (JLOpcion == 2)
+            {
+                foreach (JLAlumno DatosAlumno in JLListaAlumno)
+                {
+                    JLSumanotafinal = JLSumanotafinal + JLIndiceAlumno;
+                }
+
+                JLPromedioClase = JLSumanotafinal / JLListaAlumno.Count;
+                Console.WriteLine("La Cantidad de Alumnos " + JLListaAlumno.Count + " El Promedio General es: " + Math.Round(JLPromedioClase, 2));
+
+            }
+            else if (JLOpcion == 3)
+            {
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("------Detalles de Alumnos----");
+                Console.WriteLine("------------------------------");
+
+                foreach (JLAlumno JLDatosAlumno in JLListaAlumno)
+                {
+
+                    Console.WriteLine("El Alumno es " + JLDatosAlumno.JLNombreAlumno + " Con Cuenta " + JLDatosAlumno.JLNumeroCuentaAlumno + " con Indice " + JLIndiceAlumno);
+                }
+
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("------Resumen de la Clase----");
+                Console.WriteLine("------------------------------");
+
+                foreach (JLAlumno DatosAlumno in JLListaAlumno)
+                    {
+                        JLSumanotafinal = JLSumanotafinal + JLIndiceAlumno;
+                    }
+                   
+                    JLPromedioClase = JLSumanotafinal / JLListaAlumno.Count;
+
+                    Console.WriteLine("La Cantidad de Alumnos " + JLListaAlumno.Count + " El Promedio General es: " + Math.Round(JLPromedioClase, 2));
+            }
+            else
+            {
+                Console.WriteLine("No Selecciono una Opción Válida");
+            }
+        }
+    }
+}

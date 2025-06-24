@@ -1,0 +1,30 @@
+﻿using System;
+
+namespace Suma_Promedio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaración de Variables...
+            int JLNumeroS = 0, JLResultado = 0, JLI = 0, JLTotal = 0;
+            string Linea;
+
+            //Lectura y Asignación de Variables...
+            for
+             (JLTotal = 0, JLI = 0; JLI < 5; JLI++)
+
+            {
+                Console.WriteLine("Ingrese un número: ");
+                Linea = Console.ReadLine();
+                JLNumeroS = int.Parse(Linea);
+                JLTotal = JLTotal + JLNumeroS;
+            }
+
+            //Calculos de la suma total
+            JLResultado = JLTotal / 5;
+            Console.WriteLine(" La suma de los 5 números es: " + JLTotal);
+            Console.WriteLine(" El promedio de los 5 números es: " + JLResultado);
+        }
+    }
+}

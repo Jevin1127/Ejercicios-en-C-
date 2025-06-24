@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Facturación_Ejercicio
+{
+ 
+        class JLFactura
+        {
+            private int JLCantidadComputadoras;
+
+
+            public JLFactura( int JLPCantidadComputadoras) //Método por sobrecarga donde se irán sobrecargando los datos de la compra del cliente
+            {
+                JLCantidadComputadoras = JLPCantidadComputadoras;
+
+            }
+
+        //Se hacen los respectivos calculos de las cantidades compradas de la computadoras con tod y su impuesto
+            public int JLCalculosComputadoras()
+            {
+                return JLCantidadComputadoras * 25000;
+            }
+
+        public double JLIVA()
+        {
+            return JLCalculosComputadoras() * 0.15;
+        }
+
+        public double JLTotal()
+        {
+            return JLCalculosComputadoras() + JLIVA();
+        }
+
+        //Se imprime todos los datos de la compra de la computadoras
+        public void JLImprimirFacturaCompra()
+        {
+
+            Console.WriteLine();
+            Console.WriteLine("          Descripción             Unidades        Precio Unitario      Precio");
+            Console.WriteLine("     Compra de Computadora           " + JLCantidadComputadoras + "              L.  25,000 "+ "     L.  " + JLCalculosComputadoras());
+            Console.WriteLine("                                                        Subtotal "+ "   L.  " + JLCalculosComputadoras());
+            Console.WriteLine("                                                       Descuento "+ "   L.  ");
+            Console.WriteLine("                                                             IVA          15%");
+            Console.WriteLine("                                                 Total Impuestos "+ "   L.  "+ JLIVA());
+            Console.WriteLine("                                                  _______________");
+            Console.WriteLine("                                                   Total Factura "+ "   L.  "+ JLTotal());
+        }
+
+
+    }
+}
+
+
+
+

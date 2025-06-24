@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Ejercicio_Lista_1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int JLTamañoArreglo = 0;
+            int JLNumerodelaCuenta = 0;
+            string JLNombredelAlumno = "";
+            double JLNotaFinalAlumno = 0;
+
+            Console.Write("Ingrese la Cantidad de Alumnos: ");
+            JLTamañoArreglo = int.Parse(Console.ReadLine());
+
+            //Declaración e Inicialización de las listas de cada uno de los datos del alumno
+            List<int> JLNumerodeCuenta = new List<int>();
+            List<string> JLNombreAlumno = new List<string>();
+            List<double> JLNotaFinal = new List<double>();
+
+            //Asignación de valores a los elementos de la lista.
+            for (int JLInd = 0; JLInd < JLTamañoArreglo; JLInd++)
+            {
+                Console.Write("Ingrese el Número de Cuenta del Alumno: ");
+                JLNumerodelaCuenta = int.Parse(Console.ReadLine());
+                JLNumerodeCuenta.Add(JLNumerodelaCuenta);
+                Console.Write("Ingrese el Nombre del Alumnos: ");
+                JLNombredelAlumno = Console.ReadLine();
+                JLNombreAlumno.Add(JLNombredelAlumno);
+                Console.Write("Ingrese la Nota del Alumnos: ");
+                JLNotaFinalAlumno = double.Parse(Console.ReadLine());
+                JLNotaFinal.Add(JLNotaFinalAlumno);
+                Console.Clear();
+            }
+
+            //Lectura de los valores de los elementos de la lista
+            for (int JLInd = 0; JLInd < JLNumerodeCuenta.Count; JLInd++)
+            {                          
+                Console.WriteLine("El Alumno " + JLNombreAlumno[JLInd] + " Con numero de cuenta: " + JLNumerodeCuenta[JLInd] + ", Tiene una Nota final de: " + JLNotaFinal[JLInd]);
+            }
+
+            Console.WriteLine(" Numero de alumnos ingresados: " + JLTamañoArreglo);
+            Console.WriteLine(" Promedio total: " + JLNotaFinalAlumno / JLTamañoArreglo);
+
+        }
+    }
+}
+
+

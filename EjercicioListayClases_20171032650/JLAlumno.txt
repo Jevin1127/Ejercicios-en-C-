@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EjercicioClaseLista
+{
+    class JLAlumno
+    {
+        public string JLNombreAlumno;
+        public int JLNumeroCuentaAlumno;
+        public double JLNota1;
+        public double JLNota2;
+        public double JLNota3;
+
+        public JLAlumno(string JLPNombreAlumno, int JLPNumeroCuentaAlumno, double JLPnota1, double JLPnota2, double JLPnota3)
+        {
+            JLNombreAlumno = JLPNombreAlumno;
+            JLNumeroCuentaAlumno = JLPNumeroCuentaAlumno;
+            JLNota1 = JLPnota1;
+            JLNota2 = JLPnota2;
+            JLNota3 = JLPnota3;
+        }
+        public double JLCalculoIndiceAlumno()
+        {
+            return (JLNota1 + JLNota2 + JLNota3) / 3;
+        }
+
+    }
+}

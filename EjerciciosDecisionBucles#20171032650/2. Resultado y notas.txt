@@ -1,0 +1,64 @@
+﻿using System;
+
+namespace Resultado_Notas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Definición de Variables
+            int JLNota;
+            const int JLNotaProm = 65;
+            string Linea;
+            bool JLAprueba;
+
+            //Asignación de Variables
+            Console.Write("Ingrese su nota: ");
+            Linea = Console.ReadLine();
+            JLNota = int.Parse(Linea);
+            JLAprueba = (JLNota >= JLNotaProm);
+
+
+            //Cálculos y Resultado
+            if (JLAprueba)
+            {
+                Console.WriteLine(" APROBÓ");
+            }
+            else
+            {
+                Console.WriteLine("REPROBADO");
+            }
+            
+            if (JLNota >= 90)
+            {
+                Console.WriteLine(" SOBRESALIENTE");
+            }
+            else if (JLNota >= 75 & JLNota <= 89)
+            {
+                Console.WriteLine(" MUY BUENO");
+            }
+            else if (JLNota >= 74 & JLNota <= 65)
+            {
+                Console.WriteLine(" SUFICIENTE");
+            }
+            else if (JLNota >= 64 & JLNota <= 45)
+            {
+                Console.WriteLine(" DEFICIENTE");
+            }
+            else if (JLNota >= 44 & JLNota <= 20)
+            {
+                Console.WriteLine(" MUY DEFICIENTE");
+            }
+            else if (JLNota >= 19 & JLNota <= 1)
+            {
+                Console.WriteLine(" ABANDONO");
+            }
+            else if (JLNota == 0)
+            {
+                Console.WriteLine(" NO SE PRESENTÓ");
+            }
+
+        }
+
+    }
+}

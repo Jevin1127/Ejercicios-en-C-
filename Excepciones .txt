@@ -1,0 +1,131 @@
+//PROGRAMA MAIN 
+static void Main(string[] args)
+        {
+            char Seguir = 'S';
+                
+                //Permite repetir varias veces las operaciones
+                while (Seguir.Equals('S') || Seguir.Equals('s'))
+                {
+                try
+                {
+                    Console.WriteLine("------------Menú de Opciones------------");
+                    Console.WriteLine("------------1. Ficha Alumno-------------");
+                    Console.WriteLine("------------2. Ficha Docente------------");
+                    Console.Write("Ingrese su Opción: ");
+                    int Opcion = int.Parse(Console.ReadLine());
+
+                    switch (Opcion)
+                    {
+                        case 1:
+                            Alumno ObjAlumno = new Alumno();
+                            ObjAlumno.FechaNacimiento();
+                            ObjAlumno.ImprimirAlumno();
+                            break;
+                        case 2:
+                            Docente ObjDocente = new Docente();
+                            ObjDocente.FechaNacimiento();
+                            ObjDocente.ImprimirDocente();
+                            break;
+                        default:
+                            Console.WriteLine("No Ingreso Ninguna Opción del Menú");
+                            break;
+                    }
+
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Error, Debe Ingresar un Número...Pulse alguna tecla para continuar.");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                    Console.WriteLine();
+                    Console.WriteLine("Desea Continuar con otra Opción (S/N):");
+                    Seguir = Convert.ToChar(Console.ReadLine());
+                    Console.Clear();
+                }
+                
+        }
+// CLASE PERSONA 
+ class Persona
+    {
+        private string Nombre;
+        private string Apellido;
+        private int Edad;
+        
+        public string nombre
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+        public string apellido
+        {
+            get { return Apellido; }
+            set { Apellido = value; }
+        }
+        public int Edad1 { get => Edad; set => Edad = value; }
+
+        public void ImprimirPersona()
+        {
+            Console.WriteLine("Nombre: {0}, {1}", nombre, apellido);
+        }
+        public void CalculoEdad(DateTime PfechaNacimiento)
+        {
+            Edad = DateTime.Today.Year - PfechaNacimiento.Year;
+        }
+    }
+// CLASE ALUMNO
+class Alumno : Persona
+    {
+        private int NoCuenta;
+
+        public int NoCuenta1 { get => NoCuenta; set => NoCuenta = value; }
+
+        public void ImprimirAlumno()
+        {    
+            nombre = "Juan";
+            apellido = "Flores";
+            if (Edad1 < 1)
+            {
+                throw new Exception("Ingrese una Fecha Valida...");
+            }
+            base.ImprimirPersona();
+            Console.WriteLine("Alumno con NO Cuenta: {0}", NoCuenta1);
+            Console.WriteLine("La Edad del ALumno es: " + Edad1 + " Años");
+        }
+        public void FechaNacimiento()
+        {
+            Console.Write("Ingrese la Fecha de Nacimiento: ");
+            CalculoEdad(DateTime.Parse(Console.ReadLine()));
+        }
+
+    }
+// CLASE DOCENTE
+class Docente : Persona
+    {
+        private int NoEmpleado;
+
+        public int NoEmpleado1 { get => NoEmpleado; set => NoEmpleado = value; }
+
+        public void ImprimirDocente()
+        {
+            NoEmpleado1 = 24234;
+            nombre = "Luis";
+            apellido = "Perez";
+            if (Edad1 < 1)
+            {
+                throw new Exception("Ingrese una Fecha Valida...");
+            }
+            base.ImprimirPersona();
+            Console.WriteLine("Con Codigo de Empelado: {0}", NoEmpleado1);
+            Console.WriteLine("La Edad del Docente es: " + Edad1 + " Años");
+        }
+        public void FechaNacimiento()
+        {
+            Console.Write("Ingrese la Fecha de Nacimiento: ");
+            CalculoEdad(DateTime.Parse(Console.ReadLine()));
+        }
+    }

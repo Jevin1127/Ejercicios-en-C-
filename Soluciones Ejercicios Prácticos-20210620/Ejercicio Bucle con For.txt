@@ -1,0 +1,22 @@
+static void Main(string[] args)
+        {
+            // Declaración de Variables...
+            int NumeroTabla, I,  Resultado;
+
+            //Lectura y Asignación de Variables...
+            string linea;
+            Console.Write("Ingrese el Numero de Tabla: ");
+            linea = Console.ReadLine();
+            NumeroTabla = int.Parse(linea);
+           
+            //Cálculos y Resultado....
+            Console.WriteLine("Tabla del Número {0} :", NumeroTabla);
+            Console.WriteLine();
+
+            for(I=1; I<=10; I++)
+            {
+                Resultado = NumeroTabla * I;
+                Console.WriteLine("{0} x {1} = {2}",NumeroTabla, I, Resultado);
+            }
+
+        }

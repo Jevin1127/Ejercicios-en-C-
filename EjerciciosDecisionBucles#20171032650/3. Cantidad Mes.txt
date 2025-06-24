@@ -1,0 +1,60 @@
+﻿using System;
+
+namespace Cantidad_Mes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaración de Variables para los meses
+            string JLMes;
+            Console.Write("Ingrese cualquier mes del año: ");
+            JLMes = Console.ReadLine();
+            Console.WriteLine(); 
+
+            // Cálculos y Resultados
+            switch (JLMes)
+            {
+                case ("Enero"):
+                    Console.WriteLine(" Enero tiene 31 dias ");
+                    break;
+                case ("Febrero"):
+                    Console.WriteLine(" Febrero tiene 29 dias ");
+                    break;
+                case ("Marzo"):
+                    Console.WriteLine(" Marzo tiene 31 dias");
+                    break;
+                case ("Abril"):
+                    Console.WriteLine(" Abril tiene 30 dias");
+                    break;
+                case ("Mayo"):
+                    Console.WriteLine(" Mayo tiene 31 dias");
+                    break;
+                case ("Junio"):
+                    Console.WriteLine(" Junio tiene 30 dias");
+                    break;
+                case ("Julio"):
+                    Console.WriteLine(" Julio tiene 31 dias");
+                    break;
+                case ("Agosto"):
+                    Console.WriteLine(" Agosto tiene 31 dias");
+                    break;
+                case ("Septiembre"):
+                    Console.WriteLine(" Septiembre tiene 31 dias");
+                    break;
+                case (" Octubre"):
+                    Console.WriteLine(" Octubre tiene 31 dias");
+                    break;
+                case (" Noviembre"):
+                    Console.WriteLine(" Noviembre tiene 30 dias");
+                    break;
+                case (" Diciembre"):
+                    Console.WriteLine(" Octubre tiene 31 dias");
+                    break;
+                default: //Defaul pot si se coloca un caracter fuera de los meses
+                    Console.WriteLine(" ERROR, NO HA INGRESADO NINGUN MES");
+                    break;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+ static void Main(string[] args)
+        {
+            int Numero;
+
+            //Ejecución del Programa
+            try
+            {
+                Console.Write("Ingrese su Edad: ");
+                Numero = int.Parse(Console.ReadLine());
+                if (Numero > 100)
+                {
+                    throw new Exception("La Edad debe ser menor a 100");
+                }
+                double resultado = 6 / Numero;
+
+            }
+            catch (DivideByZeroException MiExcepcion)
+            {
+                Console.Write("No es posible dividir por 0");
+            }
+            catch (FormatException MiExcepcion)// Forma Implicita
+            {
+                Console.Write("Debde Ingresar un Dato Numerico");
+            }
+            catch (Exception Miexcepcion)// Forma Explicita
+            {
+                Console.Write(Miexcepcion.Message);
+            }
+        }

@@ -1,0 +1,39 @@
+static void Main(string[] args)
+        {
+            // Declaración de Variables...
+            int Dia = 1;
+            string Linea;
+            Console.Write("Ingrese el Número del 1 al 7 : ");
+            Linea = Console.ReadLine();
+            Dia= int.Parse(Linea);
+            Console.WriteLine(); //Dejar linea en blanco... 
+            
+            // Cálculos y Resultados...
+            switch (Dia)
+            {
+                case 1:
+                    Console.WriteLine("El Día es Lunes");
+                    break;
+                case 2:
+                    Console.WriteLine("El Día es Martes");
+                    break;
+                case 3:
+                    Console.WriteLine("El Día es Miércoles");
+                    break;
+                case 4:
+                    Console.WriteLine("El Día es Jueves");
+                    break;
+                case 5:
+                    Console.WriteLine("El Día es Viernes");
+                    break;
+                case 6:
+                    Console.WriteLine("El Día es Sábado");
+                    break;
+                case 7:
+                    Console.WriteLine("El Día es Domingo");
+                    break;
+                default: //Buena práctica dejar un default para cualquier otro valor que no esta contemplado en el swtich-case...
+                    Console.WriteLine("El Número Ingresado no es un día de la Semana");
+                    break;
+            }
+        }

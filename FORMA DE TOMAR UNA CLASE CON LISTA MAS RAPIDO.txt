@@ -1,0 +1,6 @@
+                //JLAlumno JLObjAlumno2 = new JLAlumno("", 0, 0, 0, 0);
+                //Console.WriteLine("Ingrese nombre");               
+                //JLObjAlumno2.JLNombreAlumno = Console.ReadLine();
+                //JLObjAlumno2.JLNumeroCuentaAlumno = Console.ReadLine();
+                //Asiganación Valores a la lista ALumno.
+                //JLListaAlumno.Add(new JLAlumno { JLNombreAlumno = JLnombrealumno, JLNumeroCuentaAlumno = JLnumerocuenta});

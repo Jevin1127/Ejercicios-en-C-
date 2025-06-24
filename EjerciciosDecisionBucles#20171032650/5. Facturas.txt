@@ -1,0 +1,37 @@
+﻿using System;
+
+namespace Facturas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaración de Variables
+            int JLNumeroFacturas = 0, JLNumeroA, JLI = 0, JLT, Resultado = 0;
+            string Linea;
+
+            //Lectura y Asignación de Variable
+            Console.Write("Ingrese el Número de Facturas: ");
+            Linea = Console.ReadLine();
+            JLNumeroFacturas = int.Parse(Linea);
+
+
+            //Cálculos y Salida
+            JLT = 1;
+            while (JLT <= JLNumeroFacturas)
+
+            {
+                Console.Write("Ingrese el Número de articulos de la factura #" + JLT + ": ");
+                Linea = Console.ReadLine();
+                JLNumeroA = int.Parse(Linea);
+                JLI = 1;
+                while (JLI <= JLNumeroA)
+                {
+                    Console.WriteLine("Articulo N#" + JLI);
+                    JLI = ++JLI;
+                }
+                JLT = ++JLT;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+class CadenasdeTexto
+    {
+        //Declaración de Atributos de la clase
+        private string Mayuscula;
+        private string Minuscula;
+        private int LargoCadena;
+        private string ExtraeCadena;
+        private string ReemplazaCadena;
+
+        /// <summary>
+        /// Método Constructor para la Clase CadenasdeTexto
+        /// </summary>
+        public CadenasdeTexto()
+        {
+            Mayuscula = "";
+            Minuscula = "";
+            LargoCadena = 0;
+            ExtraeCadena = "";
+            ReemplazaCadena = "";      
+        }
+
+        public string ConvertirMayuscula(string PTexto)
+        {
+            return Mayuscula = PTexto.ToUpper();
+        }
+        public string ConvertirMinuscula(string Ptexto)
+        {
+            return Minuscula = Ptexto.ToLower();
+        }
+        public int ContarCadena(string Ptexto)
+        {
+            return LargoCadena = Ptexto.Length;
+        }
+        /// <summary>
+        /// Metodo para extraer una parte de una cadena usando un inicio y cantidad.
+        /// </summary>
+        /// <param name="Ptexto">es el texto base</param>
+        /// <param name="Pinicio">indica la posicion de inicio de la cadena para extraer</param>
+        /// <param name="Pcantidad">inidica la cantidad de caracteres despues de la posicion de inicio</param>
+        /// <returns>retornara la porcion de texto segun el inicio y cantidad</returns>
+        public string ExtraerCadena(string Ptexto, int Pinicio, int Pcantidad)
+        {
+            return ExtraeCadena = Ptexto.Substring(Pinicio, Pcantidad);
+        }
+        public string ReemplazarCadena(string Ptexto, string PtextoViejo, string PtextoNuevo)
+        {
+            return ReemplazaCadena = Ptexto.Replace(PtextoViejo, PtextoNuevo);
+        }
+
+    }

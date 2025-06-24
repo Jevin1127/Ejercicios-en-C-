@@ -1,0 +1,31 @@
+ static void Main(string[] args)
+        {
+            //Declaración e Inicialización de Listas
+            List<string> Alumnos = new List<string>();
+            List<string> Clases = new List<string>();
+            List<DateTime> FechaClase = new List<DateTime>();
+
+            //Asignación de Valores a las tres Listas
+            Alumnos.Add("Juan Molina");
+            Alumnos.Add("Rene Mendoza");
+            Alumnos.Add("José Flores");
+            Alumnos.Add("Luis Martinez");
+
+            Clases.Add("Lenguaje 1");
+            Clases.Add("Base de Datos");
+            Clases.Add("Analisis y Diseño");
+            Clases.Add("Sistemas Operativos");
+
+            FechaClase.Add(DateTime.Parse("15/07/2021 10:00"));
+            FechaClase.Add(DateTime.Parse("16/07/2021 08:00"));
+            FechaClase.Add(DateTime.Parse("20/07/2021 15:00"));
+            FechaClase.Add(DateTime.Parse("19/07/2021 17:00"));
+
+            //Lectura de los datos de las tres lista a tarves de ciclo For.
+            for (int Ind= 0; Ind < Alumnos.Count;Ind++)
+            {   
+                    Console.WriteLine("El Alumno " + Alumnos[Ind] +" Pertenece a la Clase: "+Clases[Ind]+ ", La Proxima Clase es: "+ FechaClase[Ind].ToString("f"));       
+            }
+
+            
+        }

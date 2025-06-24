@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Facturación_Ejercicio
+{
+    class JLCliente
+    {
+        //Se declaran las variables en esta parte de manera privada para evitar modificaciones desde el programa main
+        private string JLNombreCliente;
+        private int JLRTN;
+        private string JLDireccion;
+        private int JLTelefono;
+        private string JLEmailCliente;
+
+
+        //Se utiliza el metodo de sobrecarga para en el programa main ingresar los datos del cliente y poder enviarlo luego a imprimirlo 
+        public JLCliente(string JLPNombreCliente, int JLPRTN, string JLPDireccion, int JLPTelefono, string JLPEmailCliente) //Método por sobrecarga donde se irán sobrecargando los datos del cliente
+        {
+
+            JLNombreCliente = JLPNombreCliente;
+            JLRTN = JLPRTN;
+            JLDireccion = JLPDireccion;
+            JLTelefono = JLPTelefono;
+            JLEmailCliente = JLPEmailCliente;
+        }
+
+
+        //Impresión de la factura en el apartado del cliente y con sus respectivos parametros sobrecargados de esta clase
+        public void JLImprimirFacturaCliente()
+        {
+            Console.WriteLine("                     TECNOPUMITA                                     FACTURA");
+            Console.WriteLine("            MALL PREMIER, SEGUNDO PISO");
+            Console.WriteLine("                                                                      Fecha");
+            Console.WriteLine("         2000 0000, 2202 0000, Tecnopumita@gmail.com                02/07/2021");
+            Console.WriteLine();
+            Console.WriteLine("                                                                   NO de Factura");
+            Console.WriteLine("                                                                       1000");
+
+            Console.WriteLine(" Cliente      _______________________________        ________________________");
+            Console.WriteLine("     "+ JLNombreCliente);
+            Console.WriteLine("     "+ JLRTN);
+            Console.WriteLine("     "+ JLDireccion);
+            Console.WriteLine("     "+ JLTelefono);
+            Console.WriteLine("     "+ JLEmailCliente);
+
+        }
+    }
+}

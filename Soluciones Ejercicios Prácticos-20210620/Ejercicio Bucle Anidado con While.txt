@@ -1,0 +1,29 @@
+        static void Main(string[] args)
+        {
+            //Declaración de Variables
+            int NumeroTablas=0,NumeroN, I, T, Resultado=0;
+            string Linea;
+
+            //Lectura y Asignación de Variable
+            Console.Write("Ingrese el Número de Tablas: ");
+            Linea = Console.ReadLine();
+            NumeroTablas = int.Parse(Linea);
+            Console.Write("Ingrese el Número de Multiplicadores: ");
+            Linea = Console.ReadLine();
+            NumeroN = int.Parse(Linea);
+
+            //Cálculos y Salida
+            T = 1;
+            while (T <= NumeroTablas)
+            {
+                Console.WriteLine("Sigue la Tabla del "+ T +":");
+                I = 1;
+                while (I <= NumeroN)
+                {
+                    Resultado = T * I;
+                    Console.WriteLine("{0} * {1} = {2}", T, I, Resultado);
+                    I = ++I;
+                }
+                T = ++T;
+            }
+        }

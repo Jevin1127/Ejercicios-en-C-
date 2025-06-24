@@ -1,0 +1,19 @@
+ static void Main(string[] args)
+        {
+            //Varialbes Locales
+            double Nota1;
+            double Nota2;
+            double Nota3;
+            //Asignacion y Lectura
+            Console.Write("Ingrese la Nota 1: ");
+            Nota1 = double.Parse(Console.ReadLine());
+            Console.Write("Ingrese la Nota 2: ");
+            Nota2 = double.Parse(Console.ReadLine());
+            Console.Write("Ingrese la Nota 3: ");
+            Nota3 = double.Parse(Console.ReadLine());
+
+            Alumno ObjAlumno = new Alumno(Nota1, Nota2, Nota3, "Adalberto Sierra");
+
+            Console.WriteLine("El Indice del Alumno es: "+ ObjAlumno.CalculoIndiceAlumno()+" Alumno: "+ObjAlumno.EnviaNOmbreAlumno());
+            ObjAlumno.ImprimirIndiceAlumno();
+        }

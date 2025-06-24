@@ -1,0 +1,76 @@
+//Jevin Salvador Lopez Vega / 20171032650
+using System;
+
+namespace OperacionesMatematicas
+{
+    class Operaciones
+    {
+        static void Main(string[] args) //Programa Principal 
+        {
+            int NUM1, NUM2;
+            string opcion, linea;
+            char seguir = 'S';
+
+            while (seguir == 'S')
+            {
+                Console.Write("Ingrese la operacion: ");
+                linea = Console.ReadLine();
+                opcion = linea;
+                Console.WriteLine("Primer Numero: ");
+                linea = Console.ReadLine();
+                NUM1 = int.Parse(linea);
+                Console.Write("Segundo Numero: ");
+                linea = Console.ReadLine();
+                NUM2 = int.Parse(linea);
+
+                if (opcion == "S") //Decision 
+                {
+                    Console.WriteLine("La Suma es {0}", Sumar(NUM1, NUM2));
+                }
+                else if (opcion == "R")
+                {
+                    Console.WriteLine("La Resta es {0},", Restar(NUM1, NUM2));
+                }
+                else if (opcion == "M")
+                {
+                    Console.WriteLine("La Multiplicacion es {0},", Multiplicar(NUM1, NUM2));
+                }
+                else if (opcion == "D")
+                {
+                    Console.WriteLine("La Division es {0},", Dividir(NUM1, NUM2));
+                }
+                Console.WriteLine("¿Desea Continuar?");
+                seguir = Convert.ToChar(Console.ReadLine());
+            }
+
+        }
+
+        public static int Sumar(int N1, int N2) //Funci�n Sumar 
+        {
+            int Resul;
+            Resul = N1 + N2;
+            return Resul;
+        }
+
+        public static int Restar(int N1, int N2) //Funci�n Restar
+        {
+            int Resul;
+            Resul = N1 - N2;
+            return Resul;
+        }
+
+        public static int Multiplicar(int N1, int N2) //Funci�n Multiplicar
+        {
+            int Resul;
+            Resul = N1 * N2;
+            return Resul;
+        }
+
+        public static int Dividir(int N1, int N2) //Funci�n Dividir
+        {
+            int Resul;
+            Resul = N1 / N2;
+            return Resul;
+        }
+    }
+}

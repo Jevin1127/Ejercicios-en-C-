@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Avance_del_Proyecto
+{
+
+    class JLEmpresa
+    {
+        private string NombreEmpresa;
+        private int JLRTNEmpresa;
+        private string JLNombreEmpresa;
+        private string JLDireccionEmpresa;
+        private int JLTelefonoEmpresa;
+        private string JLEmailEmpresa;
+
+        public int JLRTNEmpresa1 { get => JLRTNEmpresa; set => JLRTNEmpresa = value; }
+        public string JLNombreEmpresa1 { get => JLNombreEmpresa; set => JLNombreEmpresa = value; }
+        public string JLDireccionEmpresa1 { get => JLDireccionEmpresa; set => JLDireccionEmpresa = value; }
+        public int JLTelefonoEmpresa1 { get => JLTelefonoEmpresa; set => JLTelefonoEmpresa = value; }
+        public string JLEmailEmpresa1 { get => JLEmailEmpresa; set => JLEmailEmpresa = value; }
+
+        //METODO CONSTRUCTOR PARA INICIALIAR LAS PROPIEDADES
+        public JLEmpresa()
+        {
+            JLNombreEmpresa1 = "IAN´S MUSIC SA. de C.V.";
+            JLDireccionEmpresa1 = "Tegucigalpa F.M, Mall Premier D.C";
+            JLTelefonoEmpresa1 = 22232-797;
+            JLRTNEmpresa1 = 824982492;
+            JLEmailEmpresa1 = "iansmusic@gmail.com";
+        }
+
+        //METODO PARA IMPRIMIR LOS DATOS DE LA EMPRESA.
+        public void JLImprimirEmpresa()
+        {
+            Console.WriteLine("--------------------------------------------------------------------------------");
+            Console.WriteLine("                          " + JLNombreEmpresa1 + "                                 ");
+            Console.WriteLine("                          " + JLDireccionEmpresa1 + "                               ");
+            Console.WriteLine("                          " + JLTelefonoEmpresa1 + "                                ");
+            Console.WriteLine("                          " + JLRTNEmpresa1 + "                                ");
+            Console.WriteLine("                          " + JLEmailEmpresa1 + "                                ");
+        }
+    }
+}

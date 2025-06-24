@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Avance_del_Proyecto
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //INICIO EL MÉTODO PARA DISPARAR TODOS LOS DÉMAS PROCESOS.
+            Iniciar();
+        }
+        /// <summary>
+        /// Método void para poder iniciar los procesos del sistema. mejor control.
+        /// </summary>
+        public static void Iniciar()
+        {
+            //DECLARACIÓN E INICIALIZACIÓN DE LA LISTA DEL MENU
+            List<string> JLMenuPrincipal = new List<string>();
+            JLMenuPrincipal.Add("       ---------Sistema de Facturación---------");
+            JLMenuPrincipal.Add("        Debido a problemas de mantenimiento ");
+            JLMenuPrincipal.Add("     solo está diponible el ingreso de factura");
+            JLMenuPrincipal.Add("");
+            JLMenuPrincipal.Add("      ------Ingrese la opcion que desea-------");
+            JLMenuPrincipal.Add("");
+            JLMenuPrincipal.Add("               1. Ingreso de Factura");
+            JLMenuPrincipal.Add("               2. Salir del Sistema");
+
+            //LECTURA DE LA LISTA DEL MENU DE OPCIONES
+            foreach (string Opcion in JLMenuPrincipal)
+            {
+                Console.WriteLine(Opcion);
+            }
+
+            Console.Write("Ingrese el Número de Opcion: ");
+            int JLNumeroOpcion = int.Parse(Console.ReadLine());
+
+            //EVALUAR SEGÚN LA OPCIÓN QUE SELECCIONO EL USUARIO
+            switch (JLNumeroOpcion)
+            {
+                case 1:
+                    JLFactura ObjJLFactura = new JLFactura();
+                    ObjJLFactura.JLIngresoFactura();
+                    break;
+                case 2:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.Write("No Ingreso Ninguna Opción del Menú");
+                    break;
+            }
+        }
+    }
+}

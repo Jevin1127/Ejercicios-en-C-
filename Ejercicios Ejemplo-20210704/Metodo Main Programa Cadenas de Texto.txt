@@ -1,0 +1,78 @@
+static void Main(string[] args)
+        {
+            // Variables Locales
+            string Texto = "", TextoaCambiar="", TextoNuevo="";
+            char Seguir = 'S';
+            int PosicionInicial=0;
+            int CantidadCaracteres=0;
+            int Opcion = 0;
+
+            //Permite repetir varias veces las operaciones
+            while (Seguir.Equals('S') || Seguir.Equals('s'))
+            {
+                //Presentar las opciones al Usuario
+                Console.WriteLine("Menu de las Opciones de Cadena a Utilizar");
+                Console.WriteLine("1. Convertir a Mayusculas");
+                Console.WriteLine("2. Convertir a Minusculas");
+                Console.WriteLine("3. Contar la Cantidad de Caracteres");
+                Console.WriteLine("4. Extraer una Parte del Texto");
+                Console.WriteLine("5. Substituir una Parte del Texto");
+                Console.WriteLine("=========================================");
+                Console.Write("Ingrese su Opción: ");
+                Opcion = int.Parse(Console.ReadLine());
+
+                //Instanciamos la clase CadenasdeTexto
+                CadenasdeTexto ObjCadenasTexto = new CadenasdeTexto();
+
+                //Asiganar Valores mediante una estructura de decisión
+                switch (Opcion)
+                {
+                    case 1:
+                        Console.Write("Ingrese el Texto : ");
+                        Texto = Console.ReadLine();
+                        Console.WriteLine("_________________________________________");
+                        Console.WriteLine("Resultado: " + ObjCadenasTexto.ConvertirMayuscula(Texto));
+                        break;
+                    case 2:
+                        Console.Write("Ingrese el Texto : ");
+                        Texto = Console.ReadLine();
+                        Console.WriteLine("_________________________________________");
+                        Console.WriteLine("Resultado: " + ObjCadenasTexto.ConvertirMinuscula(Texto));
+                        break;
+                    case 3:
+                        Console.Write("Ingrese el Texto : ");
+                        Texto = Console.ReadLine();
+                        Console.WriteLine("_________________________________________");
+                        Console.WriteLine("Resultado: " + ObjCadenasTexto.ContarCadena(Texto));
+                        break;
+                    case 4:
+                        Console.Write("Ingrese el Texto : ");
+                        Texto = Console.ReadLine();
+                        Console.Write("Ingrese la Posición Inicial : ");
+                        PosicionInicial = int.Parse(Console.ReadLine());
+                        Console.Write("Ingrese la Cantidad de Caracteres : ");
+                        CantidadCaracteres = int.Parse(Console.ReadLine());
+                        Console.WriteLine("_________________________________________");
+                        Console.WriteLine("Resultado: " + ObjCadenasTexto.ExtraerCadena(Texto, PosicionInicial, CantidadCaracteres));
+                        break;
+                    case 5:
+                        Console.Write("Ingrese el Texto : ");
+                        Texto = Console.ReadLine();
+                        Console.Write("Ingrese el Texto que Desea Cambiar : ");
+                        TextoaCambiar = Console.ReadLine();
+                        Console.Write("Ingrese el Texto Nuevo : ");
+                        TextoNuevo = Console.ReadLine();
+                        Console.WriteLine("_________________________________________");
+                        Console.WriteLine("Resultado: " + ObjCadenasTexto.ReemplazarCadena(Texto, TextoaCambiar, TextoNuevo));
+                        break;
+                    default:
+                        Console.WriteLine("_________________________________________");
+                        Console.Write("No Ingreso Ninguna Opción del Menu");
+                        break;
+                }
+                Console.WriteLine();
+                Console.Write("Desea Continuar con otra Opción (S/N): ");
+                Seguir = Convert.ToChar(Console.ReadLine());
+                Console.Clear();
+            }
+        }

@@ -1,0 +1,54 @@
+class Alumno
+    {
+        private string NombreAlumno;
+        public int NoCuentaAlumno;
+        private string CarreraAlumno;
+        public string EmailAlumno;
+        public int EdadAlumno;
+        private string GeneroAlumno;
+        private double IndiceAlumno;
+        private double Nota1;
+        private double Nota2;
+        private double Nota3;
+
+        /// <summary>
+        /// Método constructor para inicializar la clase, desde la clase misma.
+        /// </summary>
+        public Alumno()//1.se llama como la clase, 2.NO tiene parametros, 3.NO retorna ningun valor. No es del tipo Void.
+        {
+            NombreAlumno = "";
+            CarreraAlumno = "";
+            IndiceAlumno = 0;
+            Nota1 = 50;
+            Nota2 = 50;
+            Nota3 = 50;
+        }
+        /// <summary>
+        /// Método para asiganar valores a las propieadades desde afuera de la clase, mediante parametros.
+        /// </summary>
+        /// <param name="Pnota1">Nota 1</param>
+        /// <param name="Pnota2">Nota 2</param>
+        /// <param name="Pnota3">Nota 3</param>
+        public Alumno(double Pnota1, double Pnota2, double Pnota3, string PnombreAlumno)//Método por sobrecarba o sobrecarga de métodos
+        {
+            Nota1 = Pnota1;
+            Nota2 = Pnota2;
+            Nota3 = Pnota3;
+            NombreAlumno = PnombreAlumno;
+        }
+
+        public double CalculoIndiceAlumno()
+        {
+            return (Nota1 + Nota2 + Nota3) / 3;
+        }
+        public string EnviaNOmbreAlumno()
+        {
+            return NombreAlumno;
+        }
+
+        public void ImprimirIndiceAlumno()
+        {
+            Console.WriteLine("La Impresion del Indice es: " + CalculoIndiceAlumno()+"Para el Alumno "+ NombreAlumno);
+        }
+
+    }

@@ -1,0 +1,91 @@
+        static void Main(string[] args)
+        {
+            int NUM1, NUM2;
+            string opcion, linea;
+            char seguir = 'S';
+            
+            //SECCIÓN ESTRUCTURADA
+            while (seguir.Equals('S') || seguir.Equals('s')) 
+            {
+                Console.Write("INGRESE LA OPERACIÓN Sumar=S, Restar=R Multiplicar=M y Dividir=D:");
+                linea = Console.ReadLine();
+                opcion = linea;
+
+                if (opcion == "S")// decisión
+                {
+                    Console.Write("PRIMER NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM1 = int.Parse(linea);
+                    Console.Write("SEGUNDO NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM2 = int.Parse(linea);
+                    Console.WriteLine("LA SUMA ES : {0}", Sumar(NUM1, NUM2));
+                }
+                else if (opcion == "R")
+                {
+                    Console.Write("PRIMER NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM1 = int.Parse(linea);
+                    Console.Write("SEGUNDO NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM2 = int.Parse(linea);
+                    Console.WriteLine("LA RESTA ES : {0}", Restar(NUM1, NUM2));
+                }
+                else if (opcion == "M")
+                {
+                    Console.Write("PRIMER NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM1 = int.Parse(linea);
+                    Console.Write("SEGUNDO NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM2 = int.Parse(linea);
+                    Console.WriteLine("LA MULTIPLICACIÓN ES : {0}", Multiplicar(NUM1, NUM2));
+                }
+                else if (opcion == "D")
+                {
+                    Console.Write("PRIMER NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM1 = int.Parse(linea);
+                    Console.Write("SEGUNDO NÚMERO :");
+                    linea = Console.ReadLine();
+                    NUM2 = int.Parse(linea);
+                    Console.WriteLine("LA DIVISIÓN : {0}", Dividir(NUM1, NUM2));
+                }
+                else
+                {
+                    Console.WriteLine("INGRESE UNA OPCIÓN VALIDA ");
+                }
+
+                Console.Write("Desea continuar (S/N): ");
+                seguir = Convert.ToChar(Console.ReadLine());
+            }
+
+        }
+        //SECCIÓN PROCEDIMENTAL
+        public static int Sumar(int N1, int N2) //FUNCIÓN SUMAR
+        {
+            int RESUL;
+            RESUL = N1 + N2;
+            return RESUL;
+        }
+
+        public static int Restar(int N1, int N2) //FUNCIÓN RESTAR
+        {
+            int RESUL;
+            RESUL = N1 - N2;
+            return RESUL;
+        }
+
+        public static int Multiplicar(int N1, int N2) //FUNCIÓN MULTIPLICAR
+        {
+            int RESUL;
+            RESUL = N1 * N2;
+            return RESUL;
+        }
+
+        public static int Dividir(int N1, int N2) //FUNCIÓN DIVIDIR
+        {
+            int RESUL;
+            RESUL = N1 / N2;
+            return RESUL;
+        }

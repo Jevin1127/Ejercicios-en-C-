@@ -1,0 +1,79 @@
+﻿using System;
+
+namespace Facturación_Ejercicio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Variables Locales
+            string JLNombreCliente;
+            int JLRTN;
+            string JLDireccion;
+            int JLTelefono;
+            string JLEmailCliente;
+            int JLCantidadComputadoras;
+
+            //Asignacion y Lectura
+            Console.WriteLine();
+            Console.WriteLine(" Ingrese el Nombre del cliente: ");
+            JLNombreCliente = Console.ReadLine();
+            Console.Write(" Ingrese su RTN: ");
+            JLRTN = int.Parse(Console.ReadLine());
+            Console.Write(" Ingrese su Direccion: ");
+            JLDireccion = Console.ReadLine();
+            Console.Write(" Ingrese su Telefono: ");
+            JLTelefono = int.Parse(Console.ReadLine());
+            Console.Write(" Ingrese su Correo Electronico: ");
+            JLEmailCliente = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine(" Tenemos en venta Computadoras a un precio de 25,000 LPS cada una");
+            Console.WriteLine(" ¿Cuantas desea comprar?");
+            JLCantidadComputadoras = int.Parse(Console.ReadLine());
+            
+            //Aqui se hace el llamado de las clases JLcliente y JLFactura con sus parametros los cuales fueron cargados y con sus impresiones 
+            JLCliente ObjJLCliente = new JLCliente( JLNombreCliente, JLRTN, JLDireccion, JLTelefono, JLEmailCliente);
+            JLFactura ObjJLFacturas = new JLFactura (JLCantidadComputadoras);
+            ObjJLCliente.JLImprimirFacturaCliente();
+            ObjJLFacturas.JLImprimirFacturaCompra();
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Clase_Fechas
+{
+    class JLFecha
+    {
+        //Se declaran las variables en esta parte de manera privada para evitar modificaciones desde el programa main
+        private DateTime JLFecha1;
+        private DateTime JLFecha2;
+
+
+        //Se utiliza el metodo de sobrecarga para en el programa main ingresar los datos del cliente y poder enviarlo luego a imprimirlo 
+        public JLFecha(DateTime JLPFecha1, DateTime JLPFecha2) //Método por sobrecarga donde se irán sobrecargando los datos del cliente
+        {
+
+            JLFecha1 = JLPFecha1;
+            JLFecha2 = JLPFecha2;
+
+        }
+
+
+        //Impresión de la factura en el apartado del cliente y con sus respectivos parametros sobrecargados de esta clase
+        public void JLFechaCorta()
+        {
+           Console.WriteLine("Fecha corta: " + JLFecha1.ToShortDateString());
+        }
+
+
+    }
+}

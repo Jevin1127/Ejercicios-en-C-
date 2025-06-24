@@ -1,0 +1,26 @@
+ int TamañoArreglo = 0;
+            Console.Write("Ingrese la Cantidad de Alumnos: ");
+            TamañoArreglo = int.Parse(Console.ReadLine());
+
+            //Declaración e Inicialización de Arrays
+            int[] NumerosCuenta = new int[TamañoArreglo];
+            string[] NombresAlumno = new string[TamañoArreglo];
+            double[] NotasAlumno = new double[TamañoArreglo];
+
+			//Asignación de valores a los elementos del arreglo.
+            for (int Ind=0; Ind < NumerosCuenta.Length; Ind++)
+            {
+                Console.Write("Ingrese el Número de Cuenta del Alumnos: ");
+                NumerosCuenta[Ind] = int.Parse(Console.ReadLine());
+                Console.Write("Ingrese el Nombre del Alumnos: ");
+                NombresAlumno [Ind] = Console.ReadLine();
+                Console.Write("Ingrese la Nota del Alumnos: ");
+                NotasAlumno [Ind] = double.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+			//Lectura de los valores de los elementos del arreglo
+            for (int Ind2 = 0; Ind2 < NumerosCuenta.Length; Ind2++)
+            {
+                Console.WriteLine("Numero de Cuenta: " + NumerosCuenta[Ind2] + " Nombre: " + NombresAlumno[Ind2] + " Nota Final: " + NotasAlumno[Ind2]);
+
+            }

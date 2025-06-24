@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Avance_del_Proyecto
+{
+    class JLProducto
+    {
+        private int JLNOProducto;
+        private string JLNombreProducto;
+        private int JLPrecioUnitario;
+        private char JLAplicaISV;
+        private int JLISVProducto;
+        private int JLCantidadMaxima;
+        private int JLCosto;
+        private string JLTipoUnidad;
+        private int JLUnidadporCaja;
+        private string JLTipoVenta;
+
+
+        public int JLNOProducto1 { get => JLNOProducto; set => JLNOProducto = value; }
+        public string JLNombreProducto1 { get => JLNombreProducto; set => JLNombreProducto = value; }
+        public int JLPrecioUnitario1 { get => JLPrecioUnitario; set => JLPrecioUnitario = value; }
+        public char JLAplicaISV1 { get => JLAplicaISV; set => JLAplicaISV = value; }
+        public int JLISVProducto1 { get => JLISVProducto; set => JLISVProducto = value; }
+        public int JLCantidadMaxima1 { get => JLCantidadMaxima; set => JLCantidadMaxima = value; }
+        public int JLCosto1 { get => JLCosto; set => JLCosto = value; }
+        public string JLTipoUnidad1 { get => JLTipoUnidad; set => JLTipoUnidad = value; }
+        public int JLUnidadporCaja1 { get => JLUnidadporCaja; set => JLUnidadporCaja = value; }
+        public string JLTipoVenta1 { get => JLTipoVenta; set => JLTipoVenta = value; }
+
+        public void JLListaProducto()
+        {
+            List<JLProducto> JLProducto = new List<JLProducto>
+            {
+            new JLProducto { JLNOProducto = 0000, JLNombreProducto1 = "----------------------------", JLPrecioUnitario1 = 0, JLAplicaISV1 = '"', JLISVProducto1 = 0, JLCantidadMaxima1 = 0, JLCosto1 = 0, JLTipoUnidad1 = "", JLUnidadporCaja1 = 0, JLTipoVenta1 = "" },
+            new JLProducto { JLNOProducto = 1000, JLNombreProducto1 = "Guitarra Electrica Fender", JLPrecioUnitario1 = 10000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 10, JLCosto1 = 9000, JLTipoUnidad1 = "Guitarra Electrica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1001, JLNombreProducto1 = "Teclado Casio", JLPrecioUnitario1 = 9000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 5, JLCosto1 = 8000, JLTipoUnidad1 = "Teclado Electronico", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1002, JLNombreProducto1 = "Bajo Yamaha", JLPrecioUnitario1 = 15000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 3, JLCosto1 = 14000, JLTipoUnidad1 = "Bajo Electrico", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1003, JLNombreProducto1 = "Guitarra Electroacustica Takamine", JLPrecioUnitario1 = 40000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 3, JLCosto1 = 39000, JLTipoUnidad1 = "Guitarra Electroacustica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1004, JLNombreProducto1 = "Guitarra Electrica Gibson", JLPrecioUnitario1 = 70000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 2, JLCosto1 = 60000, JLTipoUnidad1 = "Guitarra Electrica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1005, JLNombreProducto1 = "Teclado Kurzweil", JLPrecioUnitario1 = 100000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 2, JLCosto1 = 90000, JLTipoUnidad1 = "Teclado Electronico", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1006, JLNombreProducto1 = "Bajo Fender", JLPrecioUnitario1 = 12000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 5, JLCosto1 = 11000, JLTipoUnidad1 = "Bajo Electrico", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1007, JLNombreProducto1 = "Cuerdas para Guitarra Electrica", JLPrecioUnitario1 = 700, JLAplicaISV1 = 'S', JLISVProducto1 = 20, JLCantidadMaxima1 = 500, JLCosto1 = 0, JLTipoUnidad1 = "Cuerdas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1008, JLNombreProducto1 = "Cuerdas para Bajo Electrico Activo", JLPrecioUnitario1 = 1000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 10, JLCosto1 = 800, JLTipoUnidad1 = "Cuerdas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1009, JLNombreProducto1 = "Pergaminos para Redoblante", JLPrecioUnitario1 = 600, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 25, JLCosto1 = 450, JLTipoUnidad1 = "Pergaminos", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1010, JLNombreProducto1 = "Baquetas", JLPrecioUnitario1 = 400, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 20, JLCosto1 = 250, JLTipoUnidad1 = "Baquetas", JLUnidadporCaja1 = 50, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1011, JLNombreProducto1 = "Puas", JLPrecioUnitario1 = 70, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 50, JLCosto1 = 40, JLTipoUnidad1 = "Puas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1012, JLNombreProducto1 = "Pedales para Guitarra BOSS", JLPrecioUnitario1 = 4000, JLAplicaISV1 = 'S', JLISVProducto1 = 0, JLCantidadMaxima1 = 7, JLCosto1 = 3000, JLTipoUnidad1 = "Pedales", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1013, JLNombreProducto1 = "Platillos para Bateria", JLPrecioUnitario1 = 2000, JLAplicaISV1 = 'S', JLISVProducto1 = 0, JLCantidadMaxima1 = 13, JLCosto1 = 1500, JLTipoUnidad1 = "Platillos", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1014, JLNombreProducto1 = "Cables Plug", JLPrecioUnitario1 = 300, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 30, JLCosto1 = 250, JLTipoUnidad1 = "Cables", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad/Caja" },
+            };
+
+            for (int JLRegProducto = 1; JLRegProducto < JLProducto.Count; JLRegProducto++)
+            {
+                Console.WriteLine("Producto: " + JLRegProducto + " ." + JLProducto[JLRegProducto].JLNombreProducto1);
+            }
+
+        }
+
+        //METODO PARA SELECCIONAR UN VALOR DE LA LISTA SEGUN SU INDICE.
+        public void JLSeleccionarProducto(int JLPindice)
+        {
+            List<JLProducto> JLProducto = new List<JLProducto>
+            {
+            new JLProducto { JLNOProducto = 0000, JLNombreProducto1 = "----------------------------", JLPrecioUnitario1 = 0, JLAplicaISV1 = '"', JLISVProducto1 = 0, JLCantidadMaxima1 = 0, JLCosto1 = 0, JLTipoUnidad1 = "", JLUnidadporCaja1 = 0, JLTipoVenta1 = "" },
+            new JLProducto { JLNOProducto = 1000, JLNombreProducto1 = "Guitarra Electrica Fender", JLPrecioUnitario1 = 10000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 10, JLCosto1 = 9000, JLTipoUnidad1 = "Guitarra Electrica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1001, JLNombreProducto1 = "Teclado Casio", JLPrecioUnitario1 = 9000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 5, JLCosto1 = 8000, JLTipoUnidad1 = "Teclado Electronico", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1002, JLNombreProducto1 = "Bajo Yamaha", JLPrecioUnitario1 = 15000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 3, JLCosto1 = 14000, JLTipoUnidad1 = "Bajo Electrico", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1003, JLNombreProducto1 = "Guitarra Electroacustica Takamine", JLPrecioUnitario1 = 40000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 3, JLCosto1 = 39000, JLTipoUnidad1 = "Guitarra Electroacustica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1004, JLNombreProducto1 = "Guitarra Electrica Gibson", JLPrecioUnitario1 = 70000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 2, JLCosto1 = 60000, JLTipoUnidad1 = "Guitarra Electrica", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1005, JLNombreProducto1 = "Teclado Kurzweil", JLPrecioUnitario1 = 100000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 2, JLCosto1 = 90000, JLTipoUnidad1 = "Teclado Electronico", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1006, JLNombreProducto1 = "Bajo Fender", JLPrecioUnitario1 = 12000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 5, JLCosto1 = 11000, JLTipoUnidad1 = "Bajo Electrico", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad" },
+            new JLProducto { JLNOProducto = 1007, JLNombreProducto1 = "Cuerdas para Guitarra Electrica", JLPrecioUnitario1 = 700, JLAplicaISV1 = 'S', JLISVProducto1 = 20, JLCantidadMaxima1 = 500, JLCosto1 = 0, JLTipoUnidad1 = "Cuerdas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1008, JLNombreProducto1 = "Cuerdas para Bajo Electrico Activo", JLPrecioUnitario1 = 1000, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 10, JLCosto1 = 800, JLTipoUnidad1 = "Cuerdas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1009, JLNombreProducto1 = "Pergaminos para Redoblante", JLPrecioUnitario1 = 600, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 25, JLCosto1 = 450, JLTipoUnidad1 = "Pergaminos", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1010, JLNombreProducto1 = "Baquetas", JLPrecioUnitario1 = 400, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 20, JLCosto1 = 250, JLTipoUnidad1 = "Baquetas", JLUnidadporCaja1 = 50, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1011, JLNombreProducto1 = "Puas", JLPrecioUnitario1 = 70, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 50, JLCosto1 = 40, JLTipoUnidad1 = "Puas", JLUnidadporCaja1 = 10, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1012, JLNombreProducto1 = "Pedales para Guitarra BOSS", JLPrecioUnitario1 = 4000, JLAplicaISV1 = 'S', JLISVProducto1 = 0, JLCantidadMaxima1 = 7, JLCosto1 = 3000, JLTipoUnidad1 = "Pedales", JLUnidadporCaja1 = 2, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1013, JLNombreProducto1 = "Platillos para Bateria", JLPrecioUnitario1 = 2000, JLAplicaISV1 = 'S', JLISVProducto1 = 0, JLCantidadMaxima1 = 13, JLCosto1 = 1500, JLTipoUnidad1 = "Platillos", JLUnidadporCaja1 = 3, JLTipoVenta1 = "Unidad/Caja" },
+            new JLProducto { JLNOProducto = 1014, JLNombreProducto1 = "Cables Plug", JLPrecioUnitario1 = 300, JLAplicaISV1 = 'S', JLISVProducto1 = 15, JLCantidadMaxima1 = 30, JLCosto1 = 250, JLTipoUnidad1 = "Cables", JLUnidadporCaja1 = 5, JLTipoVenta1 = "Unidad/Caja" },
+            };
+            ObjJLProducto(JLProducto[JLPindice].JLNOProducto1, JLProducto[JLPindice].JLNombreProducto1, JLProducto[JLPindice].JLPrecioUnitario1, JLProducto[JLPindice].JLAplicaISV1, JLProducto[JLPindice].JLISVProducto1, JLProducto[JLPindice].JLCantidadMaxima1, JLProducto[JLPindice].JLCosto1, JLProducto[JLPindice].JLTipoUnidad1, JLProducto[JLPindice].JLUnidadporCaja1, JLProducto[JLPindice].JLTipoVenta1);
+        }
+
+        ///METODO PARA ASIGNAR POR PARAMETROS VALORES A LAS PROPIEDADES DE LA CLASE PRODUCTO.
+        public JLProducto ObjJLProducto(int jLNOProducto, string jLNombreProducto, int jLPrecioUnitario, char jLAplicaISV, int jLISVProducto, int jLCantidadMaxima, int jLCosto, string jLTipoUnidad, int jLUnidadporCaja, string jLTipoVenta)
+        {
+            JLProducto JLDatos = new JLProducto();
+            JLNOProducto1 = jLNOProducto;
+            JLNombreProducto1 = jLNombreProducto;
+            JLPrecioUnitario1 = jLPrecioUnitario;
+            JLAplicaISV1 = jLAplicaISV;
+            JLISVProducto1 = jLISVProducto;
+            JLCantidadMaxima1 = jLCantidadMaxima;
+            JLCosto1 = jLCosto;
+            JLTipoUnidad1 = jLTipoUnidad;
+            JLUnidadporCaja1 = jLUnidadporCaja;
+            JLTipoVenta1 = jLTipoVenta;
+            return JLDatos;
+        }
+    }
+
+}
+
+
+  
+

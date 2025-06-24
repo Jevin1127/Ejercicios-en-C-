@@ -1,0 +1,140 @@
+﻿using System;
+
+namespace Descuentos_Montos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Definición de Variables
+            int JLPago, JLPagoP, JLPagoPE;
+            bool JLAplica;
+            string Linea, JLMP;
+
+            //Asignación de Variables y recibidor de datos
+            Console.Write(" Super Mercado el Pumita");
+            Console.WriteLine();
+            Console.Write(" Se ha facturado las compras que ha hecho ");
+            Console.WriteLine();
+            Console.Write(" Eliga la forma de pago que usted usará ");
+            Console.WriteLine();
+            Console.WriteLine(" Escriba 'E' si desea hacer el pago en efectivo ");
+            Console.WriteLine(" Escriba 'D' si desea hacer el pago con targeta de debito ");
+            Console.WriteLine(" Escriba 'C' si desea hacer el pago con targeta de credito ");
+            Linea = Console.ReadLine();
+            JLMP = Linea;
+
+
+            //Cálculos y Resultado
+            if (JLMP == "E") 
+            {
+                Console.WriteLine(" Ha Elegido pago en efectivo ");
+                Console.WriteLine(" Se le otorgará un descuento del 10% por pagar en efectivo ");
+                Console.WriteLine(" Ingrese la cantidad que va a pagar: ");
+                Linea = Console.ReadLine();
+                JLPago = int.Parse(Linea);
+                JLPagoPE = (int)(JLPago * 0.010);
+                JLPagoP = JLPago - JLPagoPE;
+                JLAplica = JLPago > 1000;
+
+                if (JLAplica) 
+                {
+                    JLPagoPE = (int)(JLPago * 0.005);
+                    JLPagoP = JLPago - JLPagoPE;
+                    Console.WriteLine(" Se le otorgará un 5% de descuento adicional por pagar en efectivo ");
+                    Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                }
+                else
+                {
+                    if (JLPago == 1000)
+                    {
+                        JLPagoPE = (int)(JLPago * 0.005);
+                        JLPagoP = JLPago - JLPagoPE;
+                        Console.WriteLine(" Se le otorgará un 5% de descuento adicional por pagar en efectivo ");
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                }
+            }
+
+
+            else if (JLMP == "D") //Ejecutar esta función si se elige esta opcion
+            {
+                Console.WriteLine(" Ha Elegido pago con targeta de debito ");
+                Console.WriteLine(" Se le otorgará un descuento del 7% por pagar con targeta de debito ");
+                Console.WriteLine(" Ingrese la cantidad que va a pagar: ");
+                Linea = Console.ReadLine();
+                JLPago = int.Parse(Linea);
+                JLPagoPE = (int)(JLPago * 0.007);
+                JLPagoP = JLPago - JLPagoPE;
+                JLAplica = JLPago > 1000;
+
+                if (JLAplica)
+                {
+                    JLPagoPE = (int)(JLPago * 0.0025);
+                    JLPagoP = JLPago - JLPagoPE;
+                    Console.WriteLine(" Se le otorgará un 2.5% de descuento adicional por pago con targeta de debito");
+                    Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                }
+                else
+                {
+                    if (JLPago == 1000)
+                    {
+                        JLPagoPE = (int)(JLPago * 0.025);
+                        JLPagoP = JLPago - JLPagoPE;
+                        Console.WriteLine(" Se le otorgará un 2.5% de descuento adicional por pago con targeta de debito ");
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                }
+
+            }
+
+            else if (JLMP == "C")
+            {
+                Console.WriteLine(" Ha Elegido pago con targeta de credito ");
+                Console.WriteLine(" Se le otorgará un descuento del 5% por pagar con targeta de debito ");
+                Console.WriteLine(" Ingrese la cantidad que va a pagar: ");
+                Linea = Console.ReadLine();
+                JLPago = int.Parse(Linea);
+                JLPagoPE = (int)(JLPago * 0.005);
+                JLPagoP = JLPago - JLPagoPE;
+                JLAplica = JLPago > 1000;
+
+                if (JLAplica)
+                {
+                    JLPagoPE = (int)(JLPago * 0);
+                    JLPagoP = JLPago - JLPagoPE;
+                    Console.WriteLine(" Se le otorgará un 0% de descuento adicional por pago con targeta de credito ");
+                    Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                }
+                else
+                {
+                    if (JLPago == 1000)
+                    {
+                        JLPagoPE = (int)(JLPago * 0);
+                        JLPagoP = JLPago - JLPagoPE;
+                        Console.WriteLine(" Se le otorgará un 5% de descuento adicional por pago con targeta de credito ");
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Su total a pagar es: " + JLPagoP);
+                    }
+                }
+
+            }
+
+
+
+        }
+
+
+    }
+}

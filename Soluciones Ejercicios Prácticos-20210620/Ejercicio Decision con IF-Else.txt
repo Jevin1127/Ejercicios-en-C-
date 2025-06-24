@@ -1,0 +1,31 @@
+static void Main(string[] args)
+        {
+            //Definición de Variables
+            int Edad;
+            const int TerceraEdad = 65;
+            string Linea;
+            bool AplicaTerceraEdad;
+
+            //Asignación de Variables
+            Console.Write("Ingrese la Edad del Cliente: ");
+            Linea = Console.ReadLine();
+            Edad = int.Parse(Linea);
+            AplicaTerceraEdad = (Edad > TerceraEdad); //Asignación valor Verdadero a variable booleana.
+
+            //Cálculos y Resultado
+            if (AplicaTerceraEdad) //Evaluación de valor booleano.
+            {
+                Console.WriteLine("La Edad de {0} Aplica un descuento del 35% Por Terecera Edad", Edad);
+            }
+            else
+            {
+                if (Edad == TerceraEdad)
+                {
+                    Console.WriteLine("La Edad de {0} Años es Igual al Limite de {1} Años de Tercera Edad, Aplica 5% de Descuento", Edad, TerceraEdad);
+                }
+                else
+                {
+                    Console.WriteLine("La Edad de {0} Años es menor que {1} Años, No Aplica Descuento", Edad, TerceraEdad);
+                }
+            }
+        }

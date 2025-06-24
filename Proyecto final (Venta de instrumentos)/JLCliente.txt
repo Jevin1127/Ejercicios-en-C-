@@ -1,0 +1,119 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Avance_del_Proyecto
+{
+
+    class JLCliente
+    {
+        private int JLCodigoCliente;
+        private string JLNombreCliente;
+        private string JLDireccion;
+        private int JLNumeroTelefono;
+        private string JLEmail;
+        private int JLRTN;
+        private int JLDiasCredito;
+        private char JLAplicaDescuento;
+        private int JLDescuento;
+        private char JLAplicaTerceraEdad;
+        private int JLCelular;
+
+        public string JLNombreCliente1 { get => JLNombreCliente; set => JLNombreCliente = value; }
+        public int JLCodigoCliente1 { get => JLCodigoCliente; set => JLCodigoCliente = value; }
+        public string JLDireccion1 { get => JLDireccion; set => JLDireccion = value; }
+        public int JLNumeroTelefono1 { get => JLNumeroTelefono; set => JLNumeroTelefono = value; }
+        public string JLEmail1 { get => JLEmail; set => JLEmail = value; }
+        public int JLRTN1 { get => JLRTN; set => JLRTN = value; }
+        public int JLDiasCredito1 { get => JLDiasCredito; set => JLDiasCredito = value; }
+        public char JLAplicaDescuento1 { get => JLAplicaDescuento; set => JLAplicaDescuento = value; }
+        public int JLDescuento1 { get => JLDescuento; set => JLDescuento = value; }
+        public char JLAplicaTerceraEdad1 { get => JLAplicaTerceraEdad; set => JLAplicaTerceraEdad = value; }
+        public int JLCelular1 { get => JLCelular; set => JLCelular = value; }
+
+        public void JLListaCliente()
+        {
+            List<JLCliente> JLClientes = new List<JLCliente>
+            {
+                new JLCliente { JLCodigoCliente1 = 0000, JLNombreCliente1 = "----------------------------", JLDireccion1="", JLNumeroTelefono1 = 0, JLEmail1 = "", JLRTN1 = 0, JLDiasCredito1 = 0, JLAplicaDescuento1 = '"', JLDescuento1 = 0, JLAplicaTerceraEdad1 = '"', JLCelular1 = 0 },
+                new JLCliente { JLCodigoCliente1 = 1000, JLNombreCliente1 = "Jevin López", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2000-2222, JLEmail1 = "jevinvega@gmail.com", JLRTN1 = 2017-1032-650, JLDiasCredito1 = 10, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9505-7139},
+                new JLCliente { JLCodigoCliente1 = 1001, JLNombreCliente1 = "Andrea Flores", JLDireccion1="Col Villa Olimpica", JLNumeroTelefono1 = 2209-0909, JLEmail1 = "andreaflores@gmail.com", JLRTN1 = 2018-20908-096, JLDiasCredito1 = 43, JLAplicaDescuento1 = 'S', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 3210-2422 },
+                new JLCliente { JLCodigoCliente1 = 1002, JLNombreCliente1 = "Noel Mejía", JLDireccion1="Col Nueva Suyapa", JLNumeroTelefono1 = 2034-2562, JLEmail1 = "noelmejia@gmail.com", JLRTN1 = 2347-13342-620, JLDiasCredito1 = 70, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9856-2333 },
+                new JLCliente { JLCodigoCliente1 = 1003, JLNombreCliente1 = "Fernando Grandes", JLDireccion1="Col 2 de mayo", JLNumeroTelefono1 = 2023-2122, JLEmail1 = "fernandograndes@gmail.com", JLRTN1 = 2237-23452-045, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 8899-0034 },
+                new JLCliente { JLCodigoCliente1 = 1004, JLNombreCliente1 = "Daniela Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2456-2232, JLEmail1 = "danielamorazan@gmail.com", JLRTN1 = 2547-10532-876, JLDiasCredito1 = 12, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 9078-8989 },
+                new JLCliente { JLCodigoCliente1 = 1005, JLNombreCliente1 = "Erick Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2456-2232, JLEmail1 = "erickmorazan@gmail.com", JLRTN1 = 2234-3032-234, JLDiasCredito1 = 34, JLAplicaDescuento1 = 'S', JLDescuento1 = 20, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9567-7676 },
+                new JLCliente { JLCodigoCliente1 = 1006, JLNombreCliente1 = "Gabriel López", JLDireccion1="Col El Smith", JLNumeroTelefono1 = 2123-2234, JLEmail1 = "gabriellopez@gmail.com", JLRTN1 = 2232-123224-244, JLDiasCredito1 = 45, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9676-6765 },
+                new JLCliente { JLCodigoCliente1 = 1007, JLNombreCliente1 = "Geraldina Midence", JLDireccion1="Col Las Uvas", JLNumeroTelefono1 = 2456-2643, JLEmail1 = "geraldinamidence@gmail.com", JLRTN1 = 2234-102332-655, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 9545-5656 },
+                new JLCliente { JLCodigoCliente1 = 1008, JLNombreCliente1 = "Maribel Vega", JLDireccion1="Col El Pedregal", JLNumeroTelefono1 = 2201-7870, JLEmail1 = "maribelvega@gmail.com", JLRTN1 = 2027-12332-231, JLDiasCredito1 = 78, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 8954-3433 },
+                new JLCliente { JLCodigoCliente1 = 1009, JLNombreCliente1 = "Daniel Soto", JLDireccion1="Col Divino Paraiso", JLNumeroTelefono1 = 2023-2234, JLEmail1 = "danielsoto@gmail.com", JLRTN1 = 2237-10322-234, JLDiasCredito1 = 89, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9344-2222 },
+            };
+            for (int JLRegCliente = 1; JLRegCliente < JLClientes.Count; JLRegCliente++)
+            {
+                Console.WriteLine("Cliente: " + JLRegCliente + " ." + JLClientes[JLRegCliente].JLNombreCliente1);
+            }
+
+        }
+        public void JLSelectCliente(int JLPindice)
+        {
+            List<JLCliente> JLClientes = new List<JLCliente>
+            {
+                new JLCliente { JLCodigoCliente1 = 0000, JLNombreCliente1 = "----------------------------", JLDireccion1="", JLNumeroTelefono1 = 0, JLEmail1 = "", JLRTN1 = 0, JLDiasCredito1 = 0, JLAplicaDescuento1 = '"', JLDescuento1 = 0, JLAplicaTerceraEdad1 = '"', JLCelular1 = 0 },
+                new JLCliente { JLCodigoCliente1 = 1000, JLNombreCliente1 = "Jevin López", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2000-2222, JLEmail1 = "jevinvega@gmail.com", JLRTN1 = 2017-1032-650, JLDiasCredito1 = 10, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9505-7139},
+                new JLCliente { JLCodigoCliente1 = 1001, JLNombreCliente1 = "Andrea Flores", JLDireccion1="Col Villa Olimpica", JLNumeroTelefono1 = 2209-0909, JLEmail1 = "andreaflores@gmail.com", JLRTN1 = 2018-20908-096, JLDiasCredito1 = 43, JLAplicaDescuento1 = 'S', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 3210-2422 },
+                new JLCliente { JLCodigoCliente1 = 1002, JLNombreCliente1 = "Noel Mejía", JLDireccion1="Col Nueva Suyapa", JLNumeroTelefono1 = 2034-2562, JLEmail1 = "noelmejia@gmail.com", JLRTN1 = 2347-13342-620, JLDiasCredito1 = 70, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9856-2333 },
+                new JLCliente { JLCodigoCliente1 = 1003, JLNombreCliente1 = "Fernando Grandes", JLDireccion1="Col 2 de mayo", JLNumeroTelefono1 = 2023-2122, JLEmail1 = "fernandograndes@gmail.com", JLRTN1 = 2237-23452-045, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 8899-0034 },
+                new JLCliente { JLCodigoCliente1 = 1004, JLNombreCliente1 = "Daniela Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2456-2232, JLEmail1 = "danielamorazan@gmail.com", JLRTN1 = 2547-10532-876, JLDiasCredito1 = 12, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 9078-8989 },
+                new JLCliente { JLCodigoCliente1 = 1005, JLNombreCliente1 = "Erick Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 2456-2232, JLEmail1 = "erickmorazan@gmail.com", JLRTN1 = 2234-3032-234, JLDiasCredito1 = 34, JLAplicaDescuento1 = 'S', JLDescuento1 = 20, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9567-7676 },
+                new JLCliente { JLCodigoCliente1 = 1006, JLNombreCliente1 = "Gabriel López", JLDireccion1="Col El Smith", JLNumeroTelefono1 = 2123-2234, JLEmail1 = "gabriellopez@gmail.com", JLRTN1 = 2232-123224-244, JLDiasCredito1 = 45, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9676-6765 },
+                new JLCliente { JLCodigoCliente1 = 1007, JLNombreCliente1 = "Geraldina Midence", JLDireccion1="Col Las Uvas", JLNumeroTelefono1 = 2456-2643, JLEmail1 = "geraldinamidence@gmail.com", JLRTN1 = 2234-102332-655, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 9545-5656 },
+                new JLCliente { JLCodigoCliente1 = 1008, JLNombreCliente1 = "Maribel Vega", JLDireccion1="Col El Pedregal", JLNumeroTelefono1 = 2201-7870, JLEmail1 = "maribelvega@gmail.com", JLRTN1 = 2027-12332-231, JLDiasCredito1 = 78, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 8954-3433 },
+                new JLCliente { JLCodigoCliente1 = 1009, JLNombreCliente1 = "Daniel Soto", JLDireccion1="Col Divino Paraiso", JLNumeroTelefono1 = 2023-2234, JLEmail1 = "danielsoto@gmail.com", JLRTN1 = 2237-10322-234, JLDiasCredito1 = 89, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 9344-2222 },
+            };
+            Console.Clear();
+            Console.WriteLine("No Cliente: " + JLClientes[JLPindice].JLCodigoCliente1 + "-" + JLClientes[JLPindice].JLNombreCliente1);
+            Console.WriteLine("Con Dirección: " + JLClientes[JLPindice].JLDireccion1);
+            Console.WriteLine("Con Numero de Telefono fijo: " + JLClientes[JLPindice].JLNumeroTelefono1);
+            Console.WriteLine("Con Email: " + JLClientes[JLPindice].JLEmail1);
+            Console.WriteLine("Con RTN: " + JLClientes[JLPindice].JLRTN1);
+            Console.WriteLine("Con Dias de credito de: " + JLClientes[JLPindice].JLDiasCredito1);
+            Console.WriteLine("Este cliente aplica descuento:" + JLClientes[JLPindice].JLAplicaDescuento1);
+            Console.WriteLine("Con un Descuento del: " + JLClientes[JLPindice].JLDescuento1);
+            Console.WriteLine("Este cliente aplica el descuento de la tercera edad: " + JLClientes[JLPindice].JLAplicaTerceraEdad1);
+            Console.WriteLine("Con numero de celular: " + JLClientes[JLPindice].JLCelular1);
+        }
+
+        //METODO PARA IMPRIMI UN CLIENTE SEGUN SU INDICE
+        public void ImprimirCliente(int JLPindice)
+        {
+            List<JLCliente> JLClientes = new List<JLCliente>
+            {
+                new JLCliente { JLCodigoCliente1 = 0000, JLNombreCliente1 = "----------------------------", JLDireccion1="", JLNumeroTelefono1 = 0, JLEmail1 = "", JLRTN1 = 0, JLDiasCredito1 = 0, JLAplicaDescuento1 = '"', JLDescuento1 = 0, JLAplicaTerceraEdad1 = '"', JLCelular1 = 0 },
+                new JLCliente { JLCodigoCliente1 = 1000, JLNombreCliente1 = "Jevin López", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 20002222, JLEmail1 = "jevinvega@gmail.com", JLRTN1 = 2017-1032-650, JLDiasCredito1 = 10, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 95057139},
+                new JLCliente { JLCodigoCliente1 = 1001, JLNombreCliente1 = "Andrea Flores", JLDireccion1="Col Villa Olimpica", JLNumeroTelefono1 = 22090909, JLEmail1 = "andreaflores@gmail.com", JLRTN1 = 2018-20908-096, JLDiasCredito1 = 43, JLAplicaDescuento1 = 'S', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 32102422 },
+                new JLCliente { JLCodigoCliente1 = 1002, JLNombreCliente1 = "Noel Mejía", JLDireccion1="Col Nueva Suyapa", JLNumeroTelefono1 = 20342562, JLEmail1 = "noelmejia@gmail.com", JLRTN1 = 2347-13342-620, JLDiasCredito1 = 70, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 98562333 },
+                new JLCliente { JLCodigoCliente1 = 1003, JLNombreCliente1 = "Fernando Grandes", JLDireccion1="Col 2 de mayo", JLNumeroTelefono1 = 20232122, JLEmail1 = "fernandograndes@gmail.com", JLRTN1 = 2237-23452-045, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 88990034 },
+                new JLCliente { JLCodigoCliente1 = 1004, JLNombreCliente1 = "Daniela Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 24562232, JLEmail1 = "danielamorazan@gmail.com", JLRTN1 = 2547-10532-876, JLDiasCredito1 = 12, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 90788989 },
+                new JLCliente { JLCodigoCliente1 = 1005, JLNombreCliente1 = "Erick Morazán", JLDireccion1="Col Carrizal N#2", JLNumeroTelefono1 = 24562232, JLEmail1 = "erickmorazan@gmail.com", JLRTN1 = 2234-3032-234, JLDiasCredito1 = 34, JLAplicaDescuento1 = 'S', JLDescuento1 = 20, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 95677676 },
+                new JLCliente { JLCodigoCliente1 = 1006, JLNombreCliente1 = "Gabriel López", JLDireccion1="Col El Smith", JLNumeroTelefono1 = 21232234, JLEmail1 = "gabriellopez@gmail.com", JLRTN1 = 2232-123224-244, JLDiasCredito1 = 45, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 96766765 },
+                new JLCliente { JLCodigoCliente1 = 1007, JLNombreCliente1 = "Geraldina Midence", JLDireccion1="Col Las Uvas", JLNumeroTelefono1 = 24562643, JLEmail1 = "geraldinamidence@gmail.com", JLRTN1 = 2234-102332-655, JLDiasCredito1 = 56, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'S', JLCelular1 = 95455656 },
+                new JLCliente { JLCodigoCliente1 = 1008, JLNombreCliente1 = "Maribel Vega", JLDireccion1="Col El Pedregal", JLNumeroTelefono1 = 22017870, JLEmail1 = "maribelvega@gmail.com", JLRTN1 = 2027-12332-231, JLDiasCredito1 = 78, JLAplicaDescuento1 = 'N', JLDescuento1 = 0, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 89543433 },
+                new JLCliente { JLCodigoCliente1 = 1009, JLNombreCliente1 = "Daniel Soto", JLDireccion1="Col Divino Paraiso", JLNumeroTelefono1 = 20232234, JLEmail1 = "danielsoto@gmail.com", JLRTN1 = 2237-10322-234, JLDiasCredito1 = 89, JLAplicaDescuento1 = 'S', JLDescuento1 = 30, JLAplicaTerceraEdad1 = 'N', JLCelular1 = 93442222 },
+            };
+            Console.WriteLine();
+            Console.WriteLine("===============================DATOS CLIENTE===============================");
+            Console.WriteLine("   No Cliente: " + JLClientes[JLPindice].JLCodigoCliente1 + " Nombre: " + JLClientes[JLPindice].JLNombreCliente1);
+            Console.WriteLine("   Con Dirección: " + JLClientes[JLPindice].JLDireccion1);
+            Console.WriteLine("   Telefono fijo: " + JLClientes[JLPindice].JLNumeroTelefono1);
+            Console.WriteLine("   Con Email: " + JLClientes[JLPindice].JLEmail1);
+            Console.WriteLine("   Con RTN: " + JLClientes[JLPindice].JLRTN1);
+            Console.WriteLine("   Con Dias de credito de: " + JLClientes[JLPindice].JLDiasCredito1);
+            Console.WriteLine("   Este cliente aplica descuento:" + JLClientes[JLPindice].JLAplicaDescuento1);
+            Console.WriteLine("   Con un Descuento del: " + JLClientes[JLPindice].JLDescuento1);
+            Console.WriteLine("   Este cliente aplica el descuento de la tercera edad: " + JLClientes[JLPindice].JLAplicaTerceraEdad1);
+            Console.WriteLine("   Con numero de celular: " + JLClientes[JLPindice].JLCelular1);
+            Console.WriteLine("============================================================================");
+        }
+    }
+}

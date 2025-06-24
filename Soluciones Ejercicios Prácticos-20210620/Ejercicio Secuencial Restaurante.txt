@@ -1,0 +1,30 @@
+static void Main(string[] args)
+        {
+            //Declaración e Inicialización de Variables y Constantes...
+            int CantidadPizzas = 0, CantidadBebidas = 0, CantidadEnsaldas = 0;
+            const double PrecioPizzas = 45;  //sus comentarios...
+            const double PrecioBebidas = 9.5;
+            const double PrecioEnsaldas = 19.5;
+            double Pago = 0;
+            string Linea = "";
+
+            //Lectura de los Datos...
+            Console.Write("Cantidad de Pizzas a Ordenar: ");
+            Linea = Console.ReadLine();
+            CantidadPizzas = int.Parse(Linea);
+            Console.Write("Cantidad de Bebidas a Ordenar: ");
+            Linea = Console.ReadLine();
+            CantidadBebidas = int.Parse(Linea);
+            Console.Write("Cantidad de Ensaldas a Ordenar: ");
+            Linea = Console.ReadLine();
+            CantidadEnsaldas = int.Parse(Linea);
+            Console.WriteLine();
+
+            //Cálculo
+            Pago = (CantidadPizzas * PrecioPizzas) + (CantidadBebidas * PrecioBebidas) + (CantidadEnsaldas * PrecioEnsaldas);
+            
+            // Salida del Resultado
+            Console.WriteLine("El Valor a Pagar es: L. " + Pago);
+            Console.Write("Pulse una Linea para Salir");
+            Console.ReadLine();
+        }

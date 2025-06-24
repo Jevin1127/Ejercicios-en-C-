@@ -1,0 +1,187 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Avance_del_Proyecto
+{
+    class JLFactura
+    {
+        //ATRIBUTOS DE CLASE FACTURA
+        private int JLNOFactura;
+        private char JLMoneda;
+        private int JLTasaCambio;
+        private string JLTipoFactura;
+        private DateTime JLFechaFactura;
+        private DateTime JLFechaVencimiento;
+        private double JLSubTotal;
+        private int JLDescuento;
+        private int JLISV;
+        private double JLTotal;
+
+        public int JLNOFactura1 { get => JLNOFactura; set => JLNOFactura = value; }
+        public char JLMoneda1 { get => JLMoneda; set => JLMoneda = value; }
+        public int JLTasaCambio1 { get => JLTasaCambio; set => JLTasaCambio = value; }
+        public string JLTipoFactura1 { get => JLTipoFactura; set => JLTipoFactura = value; }
+        public DateTime JLFechaFactura1 { get => JLFechaFactura; set => JLFechaFactura = value; }
+        public DateTime JLFechaVencimiento1 { get => JLFechaVencimiento; set => JLFechaVencimiento = value; }
+        public double JLSubTotal1 { get => JLSubTotal; set => JLSubTotal = value; }
+        public int JLDescuento1 { get => JLDescuento; set => JLDescuento = value; }
+        public int JLISV1 { get => JLISV; set => JLISV = value; }
+        public double JLTotal1 { get => JLTotal; set => JLTotal = value; }
+
+        //VARIABLE LOCAL
+        char Seguir, JLImprimirlaFactura;
+        public int JLNoCliente;
+        public int JLCantidadProductoFactura1;
+
+        //DECLARAR LA LISTA PARA ALMACENAR DATOS DE LA FACTURA..
+        List<JLFactura> JLFacturas = new List<JLFactura>();
+        private int JLNoProductoFactura1;
+        private string JLNombreProductoFactura1;
+        private int JLPrecioProductoFactura1;
+
+        public void JLIngresoFactura()
+        {
+            try
+            {   //SE LLAMAN A CADA UNO DE LOS METODOS PARA LA GENERACIÓN DE FACTURA
+                JLTipodeFactura();
+                Console.Write("Ingrese la Fecha de Factura: ");
+                JLFechaFactura1 = DateTime.Parse(Console.ReadLine());
+                JLMonedadeFactura();
+                JLClienteFactura();
+                Console.Write("¿El Cliente es el correcto? S/N :");
+                //SE CONFIRMA QUE EL CLIENTE ES EL CORRECTO Y SE AGREGAN LOS PRODUCTOS.
+                if (Console.ReadLine() == "S" || Console.ReadLine() == "s" )
+                {
+                    JLProducto ObjProducto = new JLProducto();
+                    ObjProducto.JLListaProducto();
+
+                    Seguir = 'S';
+                    while (Seguir.Equals('S') || Seguir.Equals('s'))
+                    {
+                        Console.Write("Ingrese el Código de Producto de la Lista: ");
+                        ObjProducto.JLSeleccionarProducto(int.Parse(Console.ReadLine()));
+                        Console.Write("Ingrese la Cantidad del Producto: ");
+                        JLCantidadProductoFactura1 = int.Parse(Console.ReadLine());
+                        JLFacturas.Add(new JLFactura { JLNoProductoFactura1 = ObjProducto.JLNOProducto1, JLNombreProductoFactura1 = ObjProducto.JLNombreProducto1, JLPrecioProductoFactura1 = ObjProducto.JLPrecioUnitario1, JLCantidadProductoFactura1 = JLCantidadProductoFactura1 });
+
+                        Console.Write("Desea Agregar mas Prodcutos S/N: ");
+                        Seguir = char.Parse(Console.ReadLine());
+                    }
+                    Console.WriteLine("============================================================================");
+
+                    foreach (JLFactura JLRegDatoFactura in JLFacturas)
+                    {
+                        Console.WriteLine("=== Producto  " + JLRegDatoFactura.JLNoProductoFactura1 + " - " + JLRegDatoFactura.JLNombreProductoFactura1 + " Precio : " + JLMoneda1 + JLRegDatoFactura.JLPrecioProductoFactura1 + " Cantidad: " + JLRegDatoFactura.JLCantidadProductoFactura1 + " || ===");
+                    }
+
+                }
+                else
+                {   //SE LIMPIA LA PANTALLA Y SE EJECUTA NUEVAMENTE EL METODO INGRESOFACTURA
+                    Console.Clear();
+                    JLIngresoFactura();
+                }
+                Console.Write("¿Desea Imprimir la Factura? S/N: ");
+                JLImprimirlaFactura = char.Parse(Console.ReadLine());
+                if (JLImprimirlaFactura == 'S' || JLImprimirlaFactura == 's')
+                {
+                    Console.Clear();
+                    JLEmpresa ObjEmpresa = new JLEmpresa();
+                    ObjEmpresa.JLImprimirEmpresa();
+                    JLImprimirFactura();
+                    JLImprimirCliente();
+                    foreach (JLFactura JLRegDatoFactura in JLFacturas)
+                    {
+                        Console.WriteLine("=== Producto  " + JLRegDatoFactura.JLNoProductoFactura1 + " - " + JLRegDatoFactura.JLNombreProductoFactura1 + " Precio : " + JLMoneda1 + JLRegDatoFactura.JLPrecioProductoFactura1 + " Cantidad: " + JLRegDatoFactura.JLCantidadProductoFactura1 + " SubTotal : " + JLMoneda1 + (JLRegDatoFactura.JLCantidadProductoFactura1 * JLRegDatoFactura.JLPrecioProductoFactura1) + " || ===");
+                    }
+                    foreach (JLFactura JLRegDatoFactura in JLFacturas)
+                    {
+                        JLCliente ObjCliente = new JLCliente();
+                        double JLCalculos1 = (JLRegDatoFactura.JLCantidadProductoFactura1 * JLRegDatoFactura.JLPrecioProductoFactura1);
+                        double JLDescuento = JLCalculos1 - ObjCliente.JLDescuento1;
+                        double JLIVA = JLCalculos1 * 0.15;
+                        double JLTotal = JLDescuento + JLIVA;
+                        Console.WriteLine("                                                        Subtotal " + "   L.  " + JLCalculos1);
+                        Console.WriteLine("                                                       Descuento " + "   L.  " + ObjCliente.JLDescuento1);
+                        Console.WriteLine("                                         Subtotal menos decuento" + "   L.  " + JLDescuento);
+                        Console.WriteLine("                                                             IVA          15%");
+                        Console.WriteLine("                                                 Total Impuestos " + "   L.  " + JLIVA);
+                        Console.WriteLine("                                                  _______________");
+                        Console.WriteLine("                                                   Total Factura " + "   L.  " + JLTotal);
+                    }
+                }
+                else
+                {    //RETORNAR AL PROGRAMA MAIN...
+                    Program.Iniciar();
+                }
+
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error, Formato Incorrecto");
+                JLTipodeFactura();
+            }
+
+        }
+
+        //METODO PARA SELECCIONAR EL TIPO DE FACTURA.
+        private void JLTipodeFactura()
+        {
+            Console.WriteLine("Contamos con los diferentes tipos de factura: ");
+            Console.WriteLine("1. Contado");
+            Console.WriteLine("2. Credito");
+            Console.Write("Ingrese el Tipo de Factura que desea: ");
+            if (int.Parse(Console.ReadLine()) == 1)
+            {
+                JLTipoFactura1 = "Contado";
+            }
+            else if (int.Parse(Console.ReadLine()) == 2)
+            {
+                JLTipoFactura1 = "Crédito";
+            }
+        }
+        //METODO PARA DEFINIR LA MONEDA DE LA FACTURA
+        private void JLMonedadeFactura()
+        {
+            Console.WriteLine("1. Lempiras");
+            Console.WriteLine("2. Dólares");
+            Console.Write("Ingrese el Tipo de Factura: ");
+            if (int.Parse(Console.ReadLine()) == 1)
+            {
+                JLMoneda1 = 'L';
+            }
+            else
+            {
+                JLMoneda1 = '$';
+            }
+        }
+        //METODO PARA INSTANCIAR Y DISPARAR LOS PROCESOS DE LA CLASE CLIENTE.
+        private void JLClienteFactura()
+        {
+            JLCliente ObjJLCliente = new JLCliente();
+            ObjJLCliente.JLListaCliente();
+            Console.Write("Ingrese el Número de Cliente: ");
+            JLNoCliente = int.Parse(Console.ReadLine());
+            ObjJLCliente.ImprimirCliente(JLNoCliente);
+        }
+        //METODO PARA IMPRIRMI LOS DATOS DEL CLIENTE.
+        private void JLImprimirCliente()
+        {
+            JLCliente ObjCliente = new JLCliente();
+            ObjCliente.ImprimirCliente(JLNoCliente);
+        }
+
+        private void JLImprimirFactura()
+        {
+            DateTime JLHoy = DateTime.Now;
+            Console.WriteLine("           --------------FACTURA--------------");
+            Console.WriteLine("");
+            Console.WriteLine("             Fecha                 Vencimiento" );
+            Console.WriteLine("      " + JLHoy + "   "+ JLFechaFactura1);
+            Console.WriteLine("       Tipo de Factura       Numero de Factura");
+            Console.WriteLine("         " + JLTipoFactura1 + "             " + JLNOFactura1);
+        }
+    }
+}
