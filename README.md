@@ -1,6 +1,6 @@
 # Ejercicios en C# 📚
 
-Repositorio con todos mis ejercicios y proyectos desarrollados en C# durante mi formación académica.
+Repositorio con todos mis ejercicios y proyectos desarrollados en C# durante mi formación académica de nivel básico.
 
 ## 📂 Contenido completo
 
